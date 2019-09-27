@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const validateBearerToken = require('./validateBearerToken');
 const errorHandler = require('./errorHandler');
+const bookmarksRouter = require('./bookmarks.router');
 
 /*******************************************************************
   INIT
@@ -24,12 +25,12 @@ app.use(helmet());
 //app.use(express.json()); //parses JSON data of req body
 app.use(validateBearerToken);
 
+
+
 /*******************************************************************
   ROUTES
 *******************************************************************/
-app.get('/', (req, res) => {
-  return res.send('Hello, world!');
-});
+app.use(bookmarksRouter)
 
 /*******************************************************************
   ERROR HANDLING
