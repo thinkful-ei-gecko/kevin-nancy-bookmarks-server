@@ -25,12 +25,10 @@ app.use(helmet());
 //app.use(express.json()); //parses JSON data of req body
 app.use(validateBearerToken);
 
-
-
 /*******************************************************************
   ROUTES
 *******************************************************************/
-app.use(bookmarksRouter)
+app.use(bookmarksRouter);
 
 /*******************************************************************
   ERROR HANDLING
